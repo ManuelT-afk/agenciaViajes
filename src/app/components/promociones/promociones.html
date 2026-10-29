@@ -1,1 +1,32 @@
-<p>promociones works!</p>
+<section class="promociones-section" id="promociones">
+  <div class="container">
+    <div class="promo-header">
+      <h4 class="center-align titulo-promociones">Promociones de viajes</h4>
+      <button class="btn waves-effect waves-light" (click)="alternarPromociones()">
+        {{ mostrarVigentes ? 'Ver todas' : 'Ver vigentes' }}
+      </button>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6 l4" *ngFor="let promocion of promocionesFiltradas">
+        <div class="card promo-card hoverable">
+          <div class="card-image">
+            <img [src]="promocion.imagen" [alt]="promocion.titulo" />
+            <span *ngIf="promocion.vigente" class="new badge green" data-badge-caption="VIGENTE"></span>
+          </div>
+
+          <div class="card-content">
+            <span class="card-title">{{ promocion.titulo | titlecase }}</span>
+            <p class="descripcion-promo">{{ promocion.descripcion }}</p>
+
+            <div class="promo-info">
+              <span *ngIf="promocion.descuento" class="chip">{{ promocion.descuento }}% OFF</span>
+              <span *ngIf="promocion.beneficio" class="chip">{{ promocion.beneficio }}</span>
+              <span class="estado-promo" *ngIf="!promocion.vigente">No vigente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
