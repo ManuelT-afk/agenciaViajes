@@ -7,10 +7,11 @@ import { Header } from './components/header/header';
 import { Destinos } from './components/destinos/destinos';
 import { Promociones } from './components/promociones/promociones';
 import { Footer } from './components/footer/footer';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [App, Navbar, Header, Destinos, Promociones, Footer],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, RouterModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App, Navbar, Header,Destinos,Promociones,Footer],
 })
