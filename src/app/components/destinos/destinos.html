@@ -1,0 +1,35 @@
+<section class="destinos-section" id="destinos">
+  <div class="container">
+    <h4 class="center-align titulo-destinos">Tus proximos Destinos</h4>
+
+    <div class="row">
+      <div class="col s12 m6 l4" *ngFor="let destino of destinos">
+        <div class="card hoverable producto-card">
+          <div class="card-image">
+            <img [src]="destino.img" [alt]="destino.nombre" />
+
+            <span *ngIf="destino.disponibilidad" class="new badge green" data-badge-caption="NUEVO"></span>
+            <span *ngIf="!destino.disponibilidad" class="agotado red darken-1 white-text">
+              Agotado
+            </span>
+          </div>
+
+          <div class="card-content">
+            <span class="card-title">{{ destino.nombre | titlecase }}</span>
+
+            <div class="producto-meta">
+              <span class="chip">{{ destino.categoria }}</span>
+              <span class="precio-producto">{{ destino.precio | currency }}</span>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <button class="btn waves-effect waves-light" [disabled]="!destino.disponibilidad">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
