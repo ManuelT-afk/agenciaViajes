@@ -27,7 +27,12 @@ export class Header implements AfterViewInit {
     {
        titulo : "Puerto Esmeralda",
       descripcion : "El mejor sitio para pasar tus fines de semana",
-      img : "/img/Esmeralda.png "
+      img : "/img/Esmeralda.png"
+    },
+    {
+      titulo : "Manzanillo",
+      descripcion : "El mejor sitio para pasarla con tus amigos",
+      img : "/img/manzanillo.png "
     }
 
   ]
